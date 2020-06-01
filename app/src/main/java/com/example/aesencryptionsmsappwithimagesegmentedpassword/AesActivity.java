@@ -15,6 +15,8 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,14 +25,25 @@ import java.security.MessageDigest;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
+import static android.view.View.GONE;
+
 public class AesActivity extends AppCompatActivity {
 
     EditText msgText, msgPhone, msgKey;
     TextView cipherOutput;
     Button encryptBtn, sendBtn;
+    ImageView openDecrypt;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
     String outputString = "-1";
     String msg, phoneNo, themsgstring;
+
+    //for decrypt
+    EditText decryptMsgText, decryptMsgKey;
+    TextView deCipherOutput;
+    Button decryptBtn;
+    ImageView openEncrypt;
+
+    RelativeLayout encryptLayer, decryptLayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +91,41 @@ public class AesActivity extends AppCompatActivity {
                     return;
                 }
                 sendSMS(msgPhone.getText().toString(), outputString);
+            }
+        });
+
+        openDecrypt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                encryptLayer.setVisibility(GONE);
+                decryptLayer.setVisibility(View.VISIBLE);
+            }
+        });
+
+        openEncrypt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decryptLayer.setVisibility(GONE);
+                encryptLayer.setVisibility(View.VISIBLE);
+            }
+        });
+
+        decryptBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(decryptMsgText.getText().toString().trim().length()==0){
+                    Toast.makeText(AesActivity.this, "Enter a encrypted message", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                try {
+                    String outputString0 = decrytText(decryptMsgText.getText().toString(), decryptMsgKey.getText().toString());
+                    deCipherOutput.setVisibility(View.VISIBLE);
+                    deCipherOutput.setText(outputString0);
+                } catch (Exception e) {
+                    Toast.makeText(AesActivity.this, "Error!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AesActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -135,6 +183,17 @@ public class AesActivity extends AppCompatActivity {
         }//switch
     }//method
 
+    private String decrytText(String stringtobedecryted, String passwordofencrytedText) throws Exception {
+
+        SecretKeySpec key = generateKey(passwordofencrytedText);
+        Cipher c = Cipher.getInstance("AES");
+        c.init(Cipher.DECRYPT_MODE, key);
+        byte[] decodevalue = Base64.decode(stringtobedecryted, Base64.DEFAULT);
+        byte[] decvalue = c.doFinal(decodevalue);
+        String decrytedValue = new String(decvalue);
+        return decrytedValue;
+    }
+
     private String encrytText(String texttoencryt, String passwordofencrytText) throws Exception {
 
         SecretKeySpec key = generateKey(passwordofencrytText);
@@ -161,5 +220,15 @@ public class AesActivity extends AppCompatActivity {
         encryptBtn = findViewById(R.id.encrypt_btn);
         sendBtn = findViewById(R.id.send_btn);
         cipherOutput = findViewById(R.id.cipher_op);
+        openDecrypt=findViewById(R.id.open_decrypt);
+
+        decryptMsgText=findViewById(R.id.de_msg_text);
+        decryptMsgKey=findViewById(R.id.de_msg_key);
+        decryptBtn=findViewById(R.id.decrypt_btn);
+        deCipherOutput=findViewById(R.id.de_cipher_op);
+        openEncrypt=findViewById(R.id.open_encrypt);
+
+        encryptLayer=findViewById(R.id.encrypt_layer);
+        decryptLayer=findViewById(R.id.decrypt_layer);
     }
 }
