@@ -11,3 +11,8 @@ The user has to go through a high level authentication process based on image se
 <li>Fast and Easy, Highly reliable and secure</li>
 <li>No internet connection required</li>
 </ul>
+<h2>Screenshots</h2>
+<img src="https://github.com/tachodril/AES-encrypted-SMS-App-with-Image-segmented-password/blob/master/screenshots/1.jpeg" width="200" height="400">
+<img src="https://github.com/tachodril/AES-encrypted-SMS-App-with-Image-segmented-password/blob/master/screenshots/2.jpeg" width="200" height="400">
+<img src="https://github.com/tachodril/AES-encrypted-SMS-App-with-Image-segmented-password/blob/master/screenshots/3.jpeg" width="200" height="400">
+<img src="https://github.com/tachodril/AES-encrypted-SMS-App-with-Image-segmented-password/blob/master/screenshots/4.jpeg" width="200" height="400">
