@@ -19,7 +19,7 @@ public class FinalLoginActivity extends AppCompatActivity {
 
     String imnumber;
     CountDownTimer countDownTimer;
-    int x = 0;
+    int x = 1;
     TextView texxt;
 
     @Override
