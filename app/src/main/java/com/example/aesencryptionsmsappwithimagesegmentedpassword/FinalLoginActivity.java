@@ -144,7 +144,7 @@ public class FinalLoginActivity extends AppCompatActivity {
                 countDownTimer = new CountDownTimer(10000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
-                        Toast.makeText(FinalLoginActivity.this, String.valueOf(millisUntilFinished), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FinalLoginActivity.this, String.valueOf(millisUntilFinished/1000), Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -764,7 +764,7 @@ public class FinalLoginActivity extends AppCompatActivity {
                 countDownTimer = new CountDownTimer(10000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
-                        Toast.makeText(FinalLoginActivity.this, String.valueOf(millisUntilFinished), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FinalLoginActivity.this, String.valueOf(millisUntilFinished/1000), Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

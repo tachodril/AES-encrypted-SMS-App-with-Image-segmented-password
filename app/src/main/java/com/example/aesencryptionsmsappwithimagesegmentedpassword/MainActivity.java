@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     TextView openRegister;
     ImageView img1, img2, img3;
-    int imageNo;
+    SharedPreferences sharedPreferences;
+    int imageNo=-1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +25,16 @@ public class MainActivity extends AppCompatActivity {
 
         receiveClicks();
 
-        SharedPreferences sharedPreferences=getSharedPreferences("pref", MODE_PRIVATE);
+        sharedPreferences=getSharedPreferences("pref", MODE_PRIVATE);
         imageNo=sharedPreferences.getInt("login_image",-1);
 
         //startActivity(new Intent(this,AesActivity.class));
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        imageNo=sharedPreferences.getInt("login_image",-1);
     }
 
     private void receiveClicks() {
