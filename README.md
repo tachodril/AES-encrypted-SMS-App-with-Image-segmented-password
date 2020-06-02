@@ -16,3 +16,8 @@ The user has to go through a high level authentication process based on image se
 <img src="https://github.com/tachodril/AES-encrypted-SMS-App-with-Image-segmented-password/blob/master/screenshots/2.jpeg" width="200" height="400">
 <img src="https://github.com/tachodril/AES-encrypted-SMS-App-with-Image-segmented-password/blob/master/screenshots/3.jpeg" width="200" height="400">
 <img src="https://github.com/tachodril/AES-encrypted-SMS-App-with-Image-segmented-password/blob/master/screenshots/4.jpeg" width="200" height="400">
+<h2>References</h2>
+<ul>
+<li>SMS Encryption using AES Algorithm on Android - International Journal of Computer Applications (0975 – 8887)
+Volume 50– No.19, July 2012</li>
+</ul>
