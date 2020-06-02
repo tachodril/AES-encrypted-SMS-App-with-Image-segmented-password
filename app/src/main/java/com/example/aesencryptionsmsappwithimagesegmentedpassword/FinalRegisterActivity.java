@@ -43,9 +43,9 @@ public class FinalRegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 saveLoginPin(curSequence);
                 Toast.makeText(FinalRegisterActivity.this, "Successfully Registered !", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(FinalRegisterActivity.this,MainActivity.class);
+                //Intent intent = new Intent(FinalRegisterActivity.this,MainActivity.class);
                 finish();
-                startActivity(intent);
+                //startActivity(intent);
             }
         });
 
