@@ -130,6 +130,14 @@
                     android:src="@drawable/threeone" />
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/fra_texxt"
+                android:text="ABC"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
             <Button
                 android:id="@+id/fra_register"
                 android:layout_width="match_parent"

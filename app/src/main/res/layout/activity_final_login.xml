@@ -10,13 +10,12 @@
     tools:context=".FinalLoginActivity">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_layout"
         android:padding="5dp"
         android:gravity="center"
-        android:text="Choose a sequence of any no of images below. Remember, this will be your password."
+        android:text="Choose the valid sequence of images."
         android:textColor="@color/white"
         android:textSize="18dp"/>
 
@@ -41,14 +40,14 @@
 
                 <ImageView
                     android:layout_weight="1"
-                    android:id="@+id/imageView1"
+                    android:id="@+id/imageView1l"
                     android:padding="5dp"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:src="@drawable/twoone" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageView2l"
                     android:layout_weight="1"
                     android:padding="5dp"
                     android:layout_width="150dp"
@@ -58,7 +57,7 @@
                 <ImageView
                     android:layout_weight="1"
                     android:padding="5dp"
-                    android:id="@+id/imageView3"
+                    android:id="@+id/imageView3l"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:src="@drawable/threeone" />
@@ -74,14 +73,14 @@
 
                 <ImageView
                     android:layout_weight="1"
-                    android:id="@+id/imageView4"
+                    android:id="@+id/imageView4l"
                     android:padding="5dp"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:src="@drawable/twoone" />
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/imageView5l"
                     android:layout_weight="1"
                     android:layout_width="150dp"
                     android:padding="5dp"
@@ -90,7 +89,7 @@
 
                 <ImageView
                     android:layout_weight="1"
-                    android:id="@+id/imageView6"
+                    android:id="@+id/imageView6l"
                     android:layout_width="150dp"
                     android:padding="5dp"
                     android:layout_height="150dp"
@@ -107,14 +106,14 @@
 
                 <ImageView
                     android:layout_weight="1"
-                    android:id="@+id/imageView7"
+                    android:id="@+id/imageView7l"
                     android:padding="5dp"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:src="@drawable/twoone" />
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/imageView8l"
                     android:layout_weight="1"
                     android:layout_width="150dp"
                     android:padding="5dp"
@@ -123,22 +122,30 @@
 
                 <ImageView
                     android:layout_weight="1"
-                    android:id="@+id/imageView9"
+                    android:id="@+id/imageView9l"
                     android:padding="5dp"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:src="@drawable/threeone" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/texxt"
+                android:text="ABC"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/fra_register"
+                android:id="@+id/fla_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="true"
                 android:layout_margin="12dp"
                 android:textColor="@color/white"
                 android:background="@drawable/edit_layout"
-                android:text="Register" />
+                android:text="Login" />
         </LinearLayout>
 
     </ScrollView>

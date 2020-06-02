@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class FinalRegisterActivity extends AppCompatActivity {
@@ -16,7 +17,7 @@ public class FinalRegisterActivity extends AppCompatActivity {
     ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
 
     String imnumber;
-    String curSequence="ABC";
+    TextView curSequence;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class FinalRegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveLoginPin(curSequence);
+                saveLoginPin(curSequence.getText().toString().trim());
                 Toast.makeText(FinalRegisterActivity.this, "Successfully Registered !", Toast.LENGTH_SHORT).show();
                 //Intent intent = new Intent(FinalRegisterActivity.this,MainActivity.class);
                 finish();
@@ -108,9 +109,9 @@ public class FinalRegisterActivity extends AppCompatActivity {
     private void addImage(int i) {
         if (curSequence.equals("ABC"))
         {
-            curSequence="";
+            curSequence.setText("");
         }
-        curSequence+=(""+i);
+        curSequence.setText(curSequence.getText().toString()+""+i);
     }
 
     private void setImages() {
@@ -158,6 +159,7 @@ public class FinalRegisterActivity extends AppCompatActivity {
     }
 
     private void init() {
+        curSequence=findViewById(R.id.fra_texxt);
         register = (Button)findViewById(R.id.fra_register) ;
         img1=(ImageView)findViewById(R.id.imageView1);
         img2=(ImageView)findViewById(R.id.imageView2);
