@@ -107,11 +107,11 @@ public class FinalRegisterActivity extends AppCompatActivity {
     }
 
     private void addImage(int i) {
-        if (curSequence.equals("ABC"))
+        if (curSequence.getText().toString().trim().equals("ABC"))
         {
             curSequence.setText("");
         }
-        curSequence.setText(curSequence.getText().toString()+""+i);
+        curSequence.append(""+i);
     }
 
     private void setImages() {
