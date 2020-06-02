@@ -27,7 +27,8 @@ public class RegisterActivity extends AppCompatActivity {
         openLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -70,10 +71,11 @@ public class RegisterActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences=getSharedPreferences("pref", MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences.edit();
         editor.putInt("login_image", i);
+        editor.commit();
     }
 
     private void init() {
-        openLogin=findViewById(R.id.open_register);
+        openLogin=findViewById(R.id.ra_open_login);
         img1=findViewById(R.id.ra_img1);
         img2=findViewById(R.id.ra_img2);
         img3=findViewById(R.id.ra_img3);
