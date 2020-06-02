@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/btn_bg"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/temp_text_ma"
@@ -17,10 +17,10 @@
         android:textSize="18sp"
         android:background="@drawable/edit_layout"
         android:textColor="@color/white"
-        android:text="Choose your login image -"/>
+        android:text="Choose a login image -"/>
 
     <ImageView
-        android:id="@+id/img1"
+        android:id="@+id/ra_img1"
         android:layout_below="@+id/temp_text_ma"
         android:src="@drawable/img1"
         android:layout_centerHorizontal="true"
@@ -28,16 +28,16 @@
         android:layout_height="200dp"/>
 
     <ImageView
-        android:id="@+id/img2"
-        android:layout_below="@+id/img1"
+        android:id="@+id/ra_img2"
+        android:layout_below="@+id/ra_img1"
         android:src="@drawable/img2"
         android:layout_centerHorizontal="true"
         android:layout_width="200dp"
         android:layout_height="200dp"/>
 
     <ImageView
-        android:id="@+id/img3"
-        android:layout_below="@+id/img2"
+        android:id="@+id/ra_img3"
+        android:layout_below="@+id/ra_img2"
         android:src="@drawable/img3"
         android:layout_centerHorizontal="true"
         android:layout_width="200dp"
@@ -45,7 +45,7 @@
 
     <TextView
         android:layout_alignParentBottom="true"
-        android:id="@+id/open_register"
+        android:id="@+id/ra_open_login"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="50dp"
@@ -53,5 +53,5 @@
         android:textSize="18sp"
         android:background="@drawable/edit_layout"
         android:textColor="@color/white"
-        android:text="New User ? Register here."/>
+        android:text="Already a user ? Login."/>
 </RelativeLayout>
